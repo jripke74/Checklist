@@ -19,4 +19,3 @@ class ChecklistViewController: UITableViewController {
         return cell
     }
 }
-
