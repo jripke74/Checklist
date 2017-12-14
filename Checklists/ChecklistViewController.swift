@@ -58,6 +58,10 @@ class ChecklistViewController: UITableViewController {
         super.init(coder: aDecoder)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -90,5 +94,8 @@ class ChecklistViewController: UITableViewController {
         } else {
             cell.accessoryType = .none
         }
+    }
+    @IBAction func addItemButton(_ sender: UIBarButtonItem) {
+        print("add item button")
     }
 }
