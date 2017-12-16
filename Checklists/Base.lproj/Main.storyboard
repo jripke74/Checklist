@@ -78,6 +78,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
+                                                        <action selector="done" destination="w4c-Wk-rxQ" eventType="editingDidEndOnExit" id="Irp-WF-TVs"/>
                                                         <outlet property="delegate" destination="w4c-Wk-rxQ" id="og7-s6-a7L"/>
                                                     </connections>
                                                 </textField>
@@ -105,6 +106,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelBarButton" destination="RCr-I0-ZuT" id="rh8-zL-nMl"/>
+                        <outlet property="doneBarButton" destination="BBV-jI-Z3t" id="l2y-qP-oBR"/>
                         <outlet property="textField" destination="dPo-s3-krz" id="bo9-iJ-LIJ"/>
                     </connections>
                 </tableViewController>
