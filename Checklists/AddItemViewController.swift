@@ -8,11 +8,17 @@
 
 import UIKit
 
-class AddItemViewController: UITableViewController {
+class AddItemViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.largeTitleDisplayMode = .never
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        textField.becomeFirstResponder()
     }
 
     @IBAction func cancel() {
@@ -21,6 +27,10 @@ class AddItemViewController: UITableViewController {
     
     @IBAction func done() {
         navigationController?.popViewController(animated: true)
+        print("Contents of text field: \(String(describing: textField.text))")
     }
-
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
 }
