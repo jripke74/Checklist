@@ -53,32 +53,44 @@
             </objects>
             <point key="canvasLocation" x="246" y="124"/>
         </scene>
-        <!--Title-->
+        <!--Add Item-->
         <scene sceneID="O9E-v3-Db7">
             <objects>
-                <tableViewController id="w4c-Wk-rxQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BTw-8K-qhN">
+                <tableViewController id="w4c-Wk-rxQ" userLabel="Add Item" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="BTw-8K-qhN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Olh-TT-z1P">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Olh-TT-z1P" id="vwh-ah-ISv">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="kaI-lf-5WE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Olh-TT-z1P">
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Olh-TT-z1P" id="vwh-ah-ISv">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="w4c-Wk-rxQ" id="pnn-6f-Rjq"/>
                             <outlet property="delegate" destination="w4c-Wk-rxQ" id="p08-IT-Z3Z"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="47Y-WX-lfN">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="RCr-I0-ZuT"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="BBV-jI-Z3t"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="RCr-I0-ZuT">
+                            <connections>
+                                <action selector="cancel" destination="w4c-Wk-rxQ" id="zxP-VJ-VqB"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="BBV-jI-Z3t">
+                            <connections>
+                                <action selector="done" destination="w4c-Wk-rxQ" id="ulZ-ji-MuI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ekw-gX-NXs" userLabel="First Responder" sceneMemberID="firstResponder"/>
