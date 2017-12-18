@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Checklists-->
         <scene sceneID="Vfk-Qh-RqK">
@@ -18,22 +23,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ChecklistItem" id="bRr-GG-VNe">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="bRr-GG-VNe">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bRr-GG-VNe" id="H5L-Li-K9T">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="272" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xo4-R1-EdB">
-                                            <rect key="frame" x="0.0" y="10" width="280" height="21"/>
+                                            <rect key="frame" x="23" y="10" width="249" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="✓" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ldi-IN-sht">
+                                            <rect key="frame" x="0.0" y="9" width="22" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="w4c-Wk-rxQ" kind="show" identifier="editItem" trigger="accessoryAction" id="Wwa-fU-OfU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -44,14 +59,14 @@
                     <navigationItem key="navigationItem" title="Checklists" id="G2P-Bs-vC5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="odb-8N-Qo2">
                             <connections>
-                                <segue destination="w4c-Wk-rxQ" kind="show" id="YkY-dU-rGO"/>
+                                <segue destination="w4c-Wk-rxQ" kind="show" identifier="AddItem" id="YkY-dU-rGO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gde-qq-PLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246" y="124"/>
+            <point key="canvasLocation" x="245.625" y="123.59154929577466"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="O9E-v3-Db7">
@@ -93,7 +108,7 @@
                             <outlet property="delegate" destination="w4c-Wk-rxQ" id="p08-IT-Z3Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="47Y-WX-lfN">
+                    <navigationItem key="navigationItem" title="Edit Item" id="47Y-WX-lfN">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="RCr-I0-ZuT">
                             <connections>
                                 <action selector="cancel" destination="w4c-Wk-rxQ" id="zxP-VJ-VqB"/>
@@ -134,4 +149,7 @@
             <point key="canvasLocation" x="-501" y="124"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Wwa-fU-OfU"/>
+    </inferredMetricsTieBreakers>
 </document>
